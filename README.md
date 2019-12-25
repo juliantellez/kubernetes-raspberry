@@ -1,6 +1,6 @@
 # Kubernetes Raspberry
 
-This repository contains a walk-through of the necessary steps to provision a Kubernetes cluster powered by Raspberry PI.
+This repository contains a walk-through of the necessary steps to provision a Raspberry PI Kubernetes cluster.
 
  - [Equipment](./docs/equipment.md)
  - [Flushing the Operating System](./docs/os-flushing.md)

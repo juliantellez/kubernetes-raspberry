@@ -2,21 +2,26 @@
 
 Makes the assumption that you have enabled ssh when [flushing the drive](./os-flushing.md).
 
+ - Install nmap
+    ```sh
+    brew install nmap
+    ```
+
  - Find the device's IP address
 
     ```sh
-    # Find MAC address
-    netstat -r
+    # Find the Router's IP
+    netstat -nr | grep default
 
-    # grep for IP address
-    netstat -nr | grep "mac:add:re:ss"
+    # Inspect nodes on local network
+    nmap -sP 192.168.0.1/24
     ```
 
-    This Method is a bit cumbersome, and a better alternative should
-    be found.
+    <p align="center">
+      <img src="../assets/nmap_nodes.png" width="500px">
+    </p>
 
-
- - ssh
+ - ssh into nodes
 
     ```sh
     # ssh into device, pswd is usually "ubuntu"
