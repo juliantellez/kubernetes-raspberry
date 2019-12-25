@@ -2,9 +2,9 @@
 
 This repository contains a walk-through of the necessary steps to provision a Kubernetes cluster powered by Raspberry PI.
 
-## Equipment
+ - [Equipment](./docs/equipment.md)
+ - [Flushing the Operating System](./docs/os-flushing.md)
+ - [SSH into the Raspberry Pi](./docs/ssh_into_raspberry.md)
 
-- 4 x [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/).
-- 1 x Ethernet Switch
-- 1 x Router
-
+# What's next?
+ - [Configuring the Master Node](./docs/configure_master_node)
