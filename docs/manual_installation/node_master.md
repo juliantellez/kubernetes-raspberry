@@ -1,8 +1,8 @@
-# Manual Node Master Node
+# Manual Installation: Master Node
 
 Refer to the [node installation](./node.md) first.
 
-- [Manual Node Master Node](#manual-node-master-node)
+- [Manual Installation: Master Node](#manual-installation-master-node)
   - [Load kubeadm images and init](#load-kubeadm-images-and-init)
   - [Create the Kube config](#create-the-kube-config)
   - [Node Verification](#node-verification)

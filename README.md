@@ -7,9 +7,12 @@ This repository contains a walk-through of the necessary steps to provision a Ra
  - [SSH into the Raspberry Pi](./docs/ssh_into_raspberry.md)
  - [Manual Installation: Node](./docs/manual_installation/node.md)
  - [Manual Installation: Master Node](./docs/manual_installation/node_master.md)
+ - [Manual Installation: Slave Node](./docs/manual_installation/node_slave.md)
+
 
 ## What's next?
- - [Manual Installation: Slave Node](./docs/manual_installation/node_slave.md)
+
+- [Deploy a test service](./docs/deploy_service.md)
 
 
 ## References

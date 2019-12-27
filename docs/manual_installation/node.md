@@ -24,10 +24,11 @@ sudo hostnamectl set-hostname $NODE_NAME
 Edit the hosts file so that it maps IP addresses to hostnames. [see this link](../ssh_into_raspberry.md) to find out how to find the nodes' IP addresses.
 
 ```sh
-nano /etc/hosts
-192.168.00.27 k8s-master
-192.168.00.28 k8s-node-1
-192.168.00.29 k8s-node-2
+sudo nano /etc/hosts
+
+192.168.0.27 k8s-master
+192.168.0.28 k8s-node-1
+192.168.0.29 k8s-node-2
 ```
 
 ## Disable swap file
@@ -55,7 +56,10 @@ ipv6.disable=1 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
 sudo curl -sL get.docker.com |  sh
 sudo usermod -aG docker pi
 
-sudo cat > /etc/docker/daemon.json <<EOF
+sudo touch /etc/docker/daemon.json
+sudo nano /etc/docker/daemon.json
+
+# Append the following json
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
@@ -64,7 +68,7 @@ sudo cat > /etc/docker/daemon.json <<EOF
   },
   "storage-driver": "overlay2"
 }
-EOF
+
 
 # Restart docker.
 sudo systemctl daemon-reload

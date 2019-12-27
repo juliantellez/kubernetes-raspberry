@@ -29,6 +29,8 @@ The Raspberry PI nodes are provisioned using [Raspbian Buster](https://www.raspb
 - Enable ssh 
 
   ```
-  cd /Volumes/system-boot
+  cd /Volumes/boot
   touch ssh
   ```
+
+- Unmount and remove card
