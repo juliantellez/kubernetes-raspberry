@@ -1,6 +1,6 @@
 # SSH into Raspberry PI
 
-Makes the assumption that you have enabled ssh when [flushing the drive](./os-flushing.md).
+Makes the assumption that you have enabled ssh when [flushing the drive](./os_flushing.md).
 
  - Install nmap
     ```sh
@@ -24,6 +24,6 @@ Makes the assumption that you have enabled ssh when [flushing the drive](./os-fl
  - ssh into nodes
 
     ```sh
-    # ssh into device, pswd is usually "ubuntu"
-    ssh ubuntu@192.168.0.xx
+    # ssh into device, pswd is usually "raspberry"
+    ssh pi@192.168.0.xx
     ```

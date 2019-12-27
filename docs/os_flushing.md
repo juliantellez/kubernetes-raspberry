@@ -1,6 +1,6 @@
 # Flushing the Operating System
 
-The Raspberry PI nodes are provisioned using [Ubuntu](https://ubuntu.com/download/raspberry-pi).
+The Raspberry PI nodes are provisioned using [Raspbian Buster](https://www.raspberrypi.org/downloads/raspbian/). A light weight version of Raspbian Buster.
 
 - Download and unzip the iso image from the link above
 
@@ -23,7 +23,7 @@ The Raspberry PI nodes are provisioned using [Ubuntu](https://ubuntu.com/downloa
 - dd the image into the disk
 
   ```
-  sudo dd if=./ubuntu.19.10.1.img of=/dev/rdisk2 bs=1m
+  sudo dd if=<path-to-image>/raspbian.img of=/dev/rdisk2 bs=1m
   ```
 
 - Enable ssh 
