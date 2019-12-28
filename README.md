@@ -2,17 +2,22 @@
 
 This repository contains a walk-through of the necessary steps to provision a Raspberry PI Kubernetes cluster.
 
- - [Equipment](./docs/equipment.md)
- - [Flushing the Operating System](./docs/os_flushing.md)
- - [SSH into the Raspberry Pi](./docs/ssh_into_raspberry.md)
- - [Manual Installation: Node](./docs/manual_installation/node.md)
- - [Manual Installation: Master Node](./docs/manual_installation/node_master.md)
- - [Manual Installation: Slave Node](./docs/manual_installation/node_slave.md)
+# Installation
+- [Equipment](./docs/equipment.md)
+- [Flushing the Operating System](./docs/os_flushing.md)
+- [SSH into the Raspberry Pi](./docs/ssh_into_raspberry.md)
+- [Manual Installation: Node](./docs/manual_installation/node.md)
+- [Manual Installation: Master Node](./docs/manual_installation/node_master.md)
+- [Manual Installation: Slave Node](./docs/manual_installation/node_slave.md)
+
+
+# Getting Started with the cluster
+- [Deploy a test service](./docs/getting_started/deploy_service.md)
 
 
 ## What's next?
-
-- [Deploy a test service](./docs/deploy_service.md)
+- [Automated Installation: Ansible](./docs/installation/ansible.md)
+- [Kubectl dive](./docs/getting_started/kubectl.md)
 
 
 ## References

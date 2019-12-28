@@ -56,7 +56,6 @@ ipv6.disable=1 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
 sudo curl -sL get.docker.com |  sh
 sudo usermod -aG docker pi
 
-sudo touch /etc/docker/daemon.json
 sudo nano /etc/docker/daemon.json
 
 # Append the following json
@@ -78,7 +77,7 @@ sudo systemctl restart docker
 Check that docker is properly installed
 
 ```
-docker run hello-world
+sudo docker run hello-world
 ```
 
 ## Install Kubernetes
