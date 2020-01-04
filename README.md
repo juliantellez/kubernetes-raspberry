@@ -14,6 +14,7 @@ This repository contains a walk-through of the necessary steps to provision a Ra
 # Getting Started with the cluster
 - [Deploy a test service](./docs/getting_started/deploy_service.md)
 - [Create a load balancer](./docs/load_balancer.md)
+- [Kubernetes Dashboard](./docs/getting_started/dashboard.md)
 
 ## What's next?
 - [Automated Installation: Ansible](./docs/installation/ansible.md)
