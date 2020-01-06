@@ -104,7 +104,7 @@ kubectl apply -f manifests/dev-raspberry/metallb/config.yml
 
 ## Consideration
 
-Debian buster comes with a new way to deal with firewalls using nftables, but kube-proxy and CNIs still need old iptables interface to program firewall rules.
+Debian buster comes with a new way to deal with firewalls using [nftables](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#ensure-iptables-tooling-does-not-use-the-nftables-backend), but kube-proxy and CNIs still need old iptables interface to program firewall rules.
 
 So, we will enable the legacy mode of iptables. and reboot each node.
 as an exercise try monitoring the cluster as you reboot each node
@@ -134,4 +134,7 @@ service/nginx       LoadBalancer   10.96.4.10   192.168.0.230   80:31885/TCP   1
 ```
 
 And there we go! our service is now available to the outside world.
-`curl 192.168.0.230`
+
+<p align="center">
+    <img src="../assets/nginx.png"  width="500px"/>
+</p>
