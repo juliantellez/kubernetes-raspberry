@@ -15,12 +15,12 @@ This repository contains a walk-through of the necessary steps to provision a Ra
 - [Deploy a test service](./docs/getting_started/deploy_service.md)
 - [Create a load balancer](./docs/load_balancer.md)
 - [Kubernetes Dashboard](./docs/getting_started/dashboard.md)
+- [Data Persistence](./docs/data_persistence.md)
 
 ## What's next?
 - [Automated Installation: Ansible](./docs/installation/ansible.md)
 - [Inspecting the cluster](./docs/getting_started/inspect_cluster.md)
 - [Kubectl dive](./docs/getting_started/kubectl.md)
-- [Data Persistence]()
 - [Metrics and Observability]()
 
 
