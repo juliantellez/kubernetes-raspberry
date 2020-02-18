@@ -58,3 +58,9 @@ Double check your raspberry pi and memory card conform with the [system requirem
     <p align="center">
         <img src="../assets/equipment/raspberrypi_case.png"  width="500px"/>
     </p>
+
+- ## External Hard Drive
+
+    <p align="center">
+        <img src="../assets/equipment/hard_drive.png"  width="500px"/>
+    </p>
