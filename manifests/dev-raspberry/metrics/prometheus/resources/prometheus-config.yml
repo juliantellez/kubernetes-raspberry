@@ -1,0 +1,11 @@
+# see https://github.com/prometheus/prometheus/blob/master/docs/getting_started.md
+
+global:
+  scrape_interval: 60s
+  external_labels:
+    monitor: 'metrics'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

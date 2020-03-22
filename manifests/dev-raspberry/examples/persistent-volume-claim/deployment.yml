@@ -1,26 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-pvc-hello-world
+  name: private-volume-claim-nginx
+  namespace: examples
   labels:
-    app: nginx
+    app: private-volume-claim-nginx
+    purpose: examples
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: private-volume-claim-nginx
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: nginx
+        app: private-volume-claim-nginx
+        purpose: examples
     spec:
       containers:
       - image: nginx
-        name: nginx
+        name: private-volume-claim-nginx
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
+        resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
       volumes:
       - name: www
         persistentVolumeClaim:
