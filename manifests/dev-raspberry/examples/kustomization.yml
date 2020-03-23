@@ -3,6 +3,9 @@ kind: Kustomization
 
 bases:
   - persistent-volume-claim
+  - metrics-redis
 
 resources:
   - namespace.yml
+  - persistentVolume.yml
+  - persistentVolumeClaim.yml
