@@ -6,8 +6,14 @@ namespace: metrics
 resources:
   - deployment.yml
   - service.yml
+  - deamonset.yml
+  - clusterRole.yml
+  - serviceAccount.yml
 
 configMapGenerator:
   - name: prometheus-config
     files:
       - prometheus.yml=resources/prometheus-config.yml
+  - name: prometheus-alert-etcd
+    files:
+      - etcd.alerts.yml=./alerts/etcd.alerts.yml

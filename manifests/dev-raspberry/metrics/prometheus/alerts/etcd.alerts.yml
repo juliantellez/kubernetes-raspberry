@@ -1,0 +1,9 @@
+groups:
+  - name: etcd
+    rules:
+      - alert: NoLeader
+        expr: etcd_server_has_leader{job="kube-etcd"} == 0
+        for: 1m
+        annotations:
+          description: etcd member {{ $labels.instance }} has no leader
+          summary: etcd member has no leader

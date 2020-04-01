@@ -16,15 +16,22 @@ This repository contains a walk-through of the necessary steps to provision a Ra
 - [Create a load balancer](./docs/load_balancer.md)
 - [Kubernetes Dashboard](./docs/getting_started/dashboard.md)
 - [Data Persistence](./docs/data_persistence.md)
+- [Observability](./docs/observability.md)
+  - [Metrics](./docs/observability/prometheus.md)
 
 ## What's next?
 - [Automated Installation: Ansible](./docs/installation/ansible.md)
 - [Inspecting the cluster](./docs/getting_started/inspect_cluster.md)
 - [Kubectl dive](./docs/getting_started/kubectl.md)
-- [Metrics and Observability]()
-
+- [Observability](./docs/observability.md)
+  - [Logging]()
+  - [Tracing]()
+- [External DNS]()
 
 ## References
+
+- https://www.disasterproject.com/kubernetes-with-external-dns/
+
 
 ### Deployment
 

@@ -22,9 +22,12 @@ spec:
       - name: prometheus
         image: prom/prometheus
         volumeMounts:
-          - name: config-volume
+          - name: prometheus-config
             mountPath: /etc/prometheus/prometheus.yml
             subPath: prometheus.yml
+          - name: prometheus-alert-etcd
+            mountPath: /etc/alerts/etcd.alerts.yml
+            subPath: etcd.alerts.yml
         ports:
         - containerPort: 9090
         resources:
@@ -32,6 +35,9 @@ spec:
             memory: "128Mi"
             cpu: "500m"
       volumes:
-        - name: config-volume
+        - name: prometheus-config
           configMap:
             name: prometheus-config
+        - name: prometheus-alert-etcd
+          configMap:
+            name: prometheus-alert-etcd
