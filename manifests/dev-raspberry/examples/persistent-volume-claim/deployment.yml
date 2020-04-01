@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: persistent-volume-claim-nginx
+  namespace: examples
+  labels:
+    app: persistent-volume-claim-nginx
+    purpose: examples
+
+spec:
+  selector:
+    matchLabels:
+      app: persistent-volume-claim-nginx
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: persistent-volume-claim-nginx
+        purpose: examples
+    spec:
+      containers:
+      - name: persistent-volume-claim-nginx
+        image: nginx
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+        resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      volumes:
+      - name: www
+        persistentVolumeClaim:
+          claimName: examples-pvc

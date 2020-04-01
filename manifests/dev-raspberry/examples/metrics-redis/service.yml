@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: metrics-redis
+  namespace: examples
+  labels:
+    app: metrics-redis
+    purpose: examples
+
+spec:
+  selector:
+    app: metrics-redis
+  ports:
+    - name: metrics-redis-instance
+      protocol: TCP
+      port: 6379
+      targetPort: 6379
+    
+    - name: metrics-redis-exporter
+      protocol: TCP
+      port: 9121
+      targetPort: 9121

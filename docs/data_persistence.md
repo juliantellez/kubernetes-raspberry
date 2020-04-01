@@ -157,6 +157,9 @@ NAME                                         STATUS   VOLUME           CAPACITY 
 persistentvolumeclaim/pvc-nfs-seagate-test   Bound    pv-nfs-seagate   1Ti        RWX            seagate-driver   4m28s
 ```
 
+## Note
+Persistent Volumes and Persistent Volume Claims have a one to one relationship meaning only one claim can be done per volume. [see link](https://stackoverflow.com/questions/44204223/kubernetes-nfs-persistent-volumes-multiple-claims-on-same-volume-claim-stuck?answertab=active#tab-top)
+
 ## Using the volume in your pod
 
 Now that we have a persistent volume we can access it from within our pod.

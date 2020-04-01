@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: persistent-volume-claim-nginx
+  namespace: examples
+spec:
+  selector:
+    app: persistent-volume-claim-nginx
+    purpose: examples
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer

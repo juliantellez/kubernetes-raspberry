@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: metrics-redis
+  namespace: examples
+  labels:
+    app: metrics-redis
+    purpose: examples
+
+spec:
+  selector:
+    matchLabels:
+      app: metrics-redis
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9121"
+      labels:
+        app: metrics-redis
+        purpose: examples
+    spec:
+      containers:
+        - name: metrics-redis-instance
+          image: redis
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 6379
+        
+        - name: metrics-redis-exporter
+          image: oliver006/redis_exporter:latest-arm
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 9121
+
