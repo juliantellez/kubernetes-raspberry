@@ -14,9 +14,6 @@ Prometheus offers the following out of the box:
   - [Installing](#installing)
   - [Scraping metrics from a service](#scraping-metrics-from-a-service)
   - [Scraping metrics from Kubernetes](#scraping-metrics-from-kubernetes)
-  - [Alerting](#alerting)
-    - [Alerting rules](#alerting-rules)
-    - [Alerting Manager](#alerting-manager)
 - [References](#references)
 
 ## What is Prometheus?
@@ -73,71 +70,6 @@ Kuberenetes provides a [service](https://github.com/kubernetes/kube-state-metric
 git clone git@github.com:kubernetes/kube-state-metrics.git
 kubectl apply -k kube-state-metrics/
 ```
-
-## Alerting
-
-Prometheus alerts are comprised of two parts:
-
-- Alert rules, hold in the prometheus configuration.
-- Alert Manager, responsible for alert classification and communication
-
-### [Alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)
-
-Prometheus supports two types of rules Alerting and Recording. To include these rules we would need to create a file with the rule statements and load it via the `rule_files` in the prometheus configuration.
-
-To load them we would need to:
-
-- Create the config.
-
-```
-# example.alerts.yml
-
-groups:
-- name: etcd
-  rules:
-  - alert: NoLeader
-    expr: etcd_server_has_leader{job="kube-etcd"} == 0
-    for: 1m
-    annotations:
-      description: etcd member {{ $labels.instance }} has no leader
-      summary: etcd member has no leader
-```
-
-- Create a configMap to mount this configuration via volume
-
-```
-# kustomazation.yml
-
-configMapGenerator:
-  - name: prometheus-alert-etcd
-    files:
-      - example.alerts.yml=./alerts/example.alerts.yml
-```
-
-- Add the volume to the deployment
-
-```
-# deployment.yml
-
-volumeMounts:
-  - name: prometheus-alert-etcd
-    mountPath: /etc/alerts/example.alerts.yml
-    subPath: example.alerts.yml
-```
-
-- Load the config file to prometheus
-
-```
-# resources/prometheus-config.yml
-
-rule_files:
-  - "/etc/alerts/*.yml"
-
-```
-
-### Alerting Manager
-
-TODO
 
 # References
 

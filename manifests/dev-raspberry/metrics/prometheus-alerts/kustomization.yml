@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+kind: Kustomization
+namespace: metrics
+
+resources:
+  - deployment.yml
+  - service.yml
+
+configMapGenerator:
+  - name: prometheus-alert-manager
+    files:
+      - alertmanager.yml=./resources/alertmanager.yml
+
+  - name: prometheus-alert-test
+    files:
+      - test.alerts.yml=./alerts/test.alerts.yml
+
+  - name: prometheus-alert-etcd
+    files:
+      - etcd.alerts.yml=./alerts/etcd.alerts.yml

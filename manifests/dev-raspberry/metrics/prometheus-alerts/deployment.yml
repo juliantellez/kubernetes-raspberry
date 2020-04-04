@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: prometheus-alerts
+  namespace: metrics
+  labels:
+    app: prometheus-alerts
+    purpose: metrics
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prometheus-alerts
+      purpose: metrics
+  template:
+    metadata:
+      labels:
+        app: prometheus-alerts
+        purpose: metrics
+    spec:
+      containers:
+        - name: prometheus-alerts
+          image: prom/alertmanager
+          ports:
+            - containerPort: 9093
+          volumeMounts:
+            - name: prometheus-alert-manager
+              mountPath: /etc/alertmanager/alertmanager.yml
+              subPath: alertmanager.yml
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      volumes:
+        - name: prometheus-alert-manager
+          configMap:
+            name: prometheus-alert-manager

@@ -1,11 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: prometheus
   namespace: metrics
   labels:
     app: prometheus
     purpose: metrics
+
 spec:
   replicas: 2
   selector:
@@ -21,15 +23,21 @@ spec:
       containers:
       - name: prometheus
         image: prom/prometheus
+        ports:
+          - containerPort: 9090
         volumeMounts:
           - name: prometheus-config
             mountPath: /etc/prometheus/prometheus.yml
             subPath: prometheus.yml
+
           - name: prometheus-alert-etcd
             mountPath: /etc/alerts/etcd.alerts.yml
             subPath: etcd.alerts.yml
-        ports:
-        - containerPort: 9090
+
+          - name: prometheus-alert-test
+            mountPath: /etc/alerts/test.alerts.yml
+            subPath: test.alerts.yml
+
         resources:
           limits:
             memory: "128Mi"
@@ -41,3 +49,6 @@ spec:
         - name: prometheus-alert-etcd
           configMap:
             name: prometheus-alert-etcd
+        - name: prometheus-alert-test
+          configMap:
+            name: prometheus-alert-test
