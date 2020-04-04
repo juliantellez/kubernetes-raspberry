@@ -1,13 +1,15 @@
 kind: Service
 apiVersion: v1
+
 metadata:
   name: prometheus
   namespace: metrics
+
 spec:
+  type: LoadBalancer
   selector:
     app: prometheus
     purpose: metrics
   ports:
-  - port: 9090
-    targetPort: 9090
-  type: LoadBalancer
+    - port: 9090
+      targetPort: 9090

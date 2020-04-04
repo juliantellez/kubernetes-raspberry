@@ -8,6 +8,13 @@ global:
 rule_files:
   - "/etc/alerts/*.yml"
 
+alerting:
+  alertmanagers:
+    - scheme: http
+      static_configs:
+      - targets:
+        - "prometheus-alerts:9093"
+
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
