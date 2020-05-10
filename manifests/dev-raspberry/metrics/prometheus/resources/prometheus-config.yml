@@ -1,4 +1,8 @@
-# see https://github.com/prometheus/prometheus/blob/master/docs/getting_started.md
+#
+# Resources:
+# - https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml
+# - https://cloud.spring.io/spring-cloud-pipelines/multi/multi__the_demo_setup_kubernetes.html
+#
 
 global:
   scrape_interval: 60s
