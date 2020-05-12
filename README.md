@@ -17,8 +17,9 @@ This repository contains a walk-through of the necessary steps to provision a Ra
 - [Kubernetes Dashboard](./docs/getting_started/dashboard.md)
 - [Data Persistence](./docs/data_persistence.md)
 - [Observability](./docs/observability.md)
-  - [Metrics Collection](./docs/observability/prometheus.md)
-  - [Metrics Alerts](./docs/observability/prometheus-alerts.md)
+  - [Metrics Collection](./docs/observability/metrics/prometheus.md)
+  - [Metrics Alerts](./docs/observability/metrics/prometheus-alerts.md)
+  - [Metrics Visualization](./docs/observability/metrics/)
 
 ## What's next?
 - [Automated Installation: Ansible](./docs/installation/ansible.md)
