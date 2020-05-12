@@ -1,7 +1,7 @@
 global:
   resolve_timeout: 5m
 
-  route:
+route:
   group_by: ["alertname"]
   group_wait: 10s
   group_interval: 10s
@@ -11,4 +11,4 @@ global:
 receivers:
   - name: "test-receiver"
     webhook_configs:
-      - url: "https://webhook.site/<uuid-test>"
+      - url: "https://webhook.site/167cf8f5-4526-4338-b44b-648e99365f78"
