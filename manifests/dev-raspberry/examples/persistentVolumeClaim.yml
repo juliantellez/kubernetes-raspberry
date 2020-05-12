@@ -1,15 +1,12 @@
 apiVersion: v1
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 metadata:
-  name: exmaples-pv
-  labels:
-    type: local
+  name: examples-pvc
+  namespace: examples
 spec:
   storageClassName: examples-storage
-  capacity:
-    storage: 1Ti
   accessModes:
     - ReadWriteMany
-  nfs:
-    server: 192.168.0.26
-    path: /mnt/k8s-volume/examples
+  resources:
+    requests:
+      storage: 1Ti
