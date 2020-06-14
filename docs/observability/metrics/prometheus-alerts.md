@@ -95,7 +95,7 @@ global:
 receivers:
   - name: "test-receiver"
     webhook_configs:
-      - url: "https://webhook.site/<uuid>
+      - url: "https://webhook.site/<uuid>"
 ```
 
 You would also need to update the prometheus configuration so it is aware of the alert manager service.

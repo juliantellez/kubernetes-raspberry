@@ -1,5 +1,9 @@
 # [Prometheus](https://prometheus.io/)
 
+<p align="center">
+    <img src="../../../assets/observability/metrics/prometheus.png"  width="500px"/>
+</p>
+
 Prometheus offers the following out of the box:
 
 ```
@@ -183,3 +187,5 @@ kubectl apply -k ./metrics
 
 - https://sysdig.com/blog/kubernetes-monitoring-prometheus/
 - https://help.sumologic.com/Metrics/Kubernetes_Metrics
+- https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml
+- https://cloud.spring.io/spring-cloud-pipelines/multi/multi__the_demo_setup_kubernetes.html
