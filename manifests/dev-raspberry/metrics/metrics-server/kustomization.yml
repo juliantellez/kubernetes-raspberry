@@ -1,0 +1,17 @@
+# 
+# see https://github.com/kubernetes-sigs/metrics-server/releases (components.yml)
+# see https://github.com/carlosedp/kubernetes-arm/tree/master/5-Metrics-server
+#
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+kind: Kustomization
+
+resources:
+  - cluster-role.yml
+  - cluster-role-binding.yml
+  - role-binding.yml
+  - api-service.yml
+  - service-account.yml
+  - deployment.yml
+  - service.yml

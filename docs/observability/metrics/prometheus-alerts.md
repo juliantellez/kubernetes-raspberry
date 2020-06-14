@@ -80,6 +80,8 @@ kubectl apply -k manifests/dev-raspberry/metrics
 Note that the alert manager configuration would need a custom receiver, you can use [test webhooks](https://webhook.site/) to test the integration in the meantime.
 
 ```
+# prometheus-alerts/resources/alertmanager.yml
+
 global:
   resolve_timeout: 5m
 
@@ -93,5 +95,18 @@ global:
 receivers:
   - name: "test-receiver"
     webhook_configs:
-      - url: "https://webhook.site/<uuid>
+      - url: "https://webhook.site/<uuid>"
+```
+
+You would also need to update the prometheus configuration so it is aware of the alert manager service.
+
+```
+# prometheus/resources/prometheus-config.yml
+
+alerting:
+  alertmanagers:
+    - scheme: http
+      static_configs:
+      - targets:
+        - "prometheus-alerts:9093"
 ```

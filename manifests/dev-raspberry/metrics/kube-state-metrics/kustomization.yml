@@ -6,10 +6,6 @@ namespace: metrics
 resources:
   - deployment.yml
   - service.yml
-  - clusterRole.yml
   - serviceAccount.yml
-
-configMapGenerator:
-  - name: prometheus-config
-    files:
-      - prometheus.yml=resources/prometheus-config.yml
+  - cluster-role.yml
+  - cluster-role-binding.yml
