@@ -19,7 +19,7 @@ This repository contains a walk-through of the necessary steps to provision a Ra
 - [Observability](./docs/observability.md)
   - [Metrics Collection](./docs/observability/metrics/prometheus.md)
   - [Metrics Alerts](./docs/observability/metrics/prometheus-alerts.md)
-  - [Metrics Visualization](./docs/observability/metrics/)
+  - [Metrics Visualization](./docs/observability/metrics/graphana.md)
 
 ## What's next?
 - [Automated Installation: Ansible](./docs/installation/ansible.md)

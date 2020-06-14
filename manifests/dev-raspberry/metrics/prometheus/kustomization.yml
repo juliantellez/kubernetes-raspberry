@@ -6,7 +6,6 @@ namespace: metrics
 resources:
   - deployment.yml
   - service.yml
-  - deamonset.yml
   - clusterRole.yml
   - serviceAccount.yml
 

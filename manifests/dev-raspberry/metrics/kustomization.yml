@@ -4,6 +4,7 @@ kind: Kustomization
 bases:
   - metrics-server
   - kube-state-metrics
+  - node-exporter
   - prometheus
   - prometheus-alerts
   - grafana
