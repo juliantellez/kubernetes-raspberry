@@ -25,5 +25,5 @@ Makes the assumption that you have enabled ssh when [flushing the drive](./os_fl
 
     ```sh
     # ssh into device, pswd is usually "raspberry"
-    ssh pi@192.168.0.xx
+    ssh ubuntu@192.168.0.xx
     ```

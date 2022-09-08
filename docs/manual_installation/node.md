@@ -35,10 +35,8 @@ sudo nano /etc/hosts
 Why do we need to disable the swap memory?
 
 ```
-sudo dphys-swapfile swapoff
-sudo dphys-swapfile uninstall
-sudo systemctl disable dphys-swapfile
 sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 ## Edit boot configuration
@@ -54,7 +52,7 @@ ipv6.disable=1 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
 ## Install Docker
 ```
 sudo curl -sL get.docker.com |  sh
-sudo usermod -aG docker pi
+sudo usermod -aG docker ubuntu
 
 sudo nano /etc/docker/daemon.json
 

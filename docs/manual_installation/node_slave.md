@@ -9,7 +9,7 @@ Refer to the [node installation](./node.md) first. This section also assumes tha
 # Join the Cluster
 
 ```
-K8S_MASTER_IP=192.168.0.27
+K8S_MASTER_IP=192.168.0.25
 sudo kubeadm join $K8S_MASTER_IP:6443 \
     --token <token here> \
     --discovery-token-ca-cert-hash sha256:<hash value here>

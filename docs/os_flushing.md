@@ -1,6 +1,6 @@
 # Flushing the Operating System
 
-The Raspberry PI nodes are provisioned using [Raspbian Buster](https://www.raspberrypi.org/downloads/raspbian/). A light weight version of Raspbian Buster.
+The Raspberry PI nodes are provisioned using [Ubuntu 22.04 LTS](https://ubuntu.com/download/raspberry-pi) for ARM
 
 - Download and unzip the iso image from the link above
 

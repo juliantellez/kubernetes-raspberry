@@ -25,7 +25,7 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --token-ttl=0
 Save the token and discovery token provided by the initialisation.
 
 ```
-kubeadm join 192.168.0.27:6443 --token xxx \
+kubeadm join 192.168.0.25:6443 --token xxx \
     --discovery-token-ca-cert-hash sha256:xxx
 ```
 
