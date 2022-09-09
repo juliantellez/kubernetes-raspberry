@@ -29,8 +29,7 @@ The Raspberry PI nodes are provisioned using [Ubuntu 22.04 LTS](https://ubuntu.c
 - Enable ssh 
 
   ```
-  cd /Volumes/boot
-  touch ssh
+  touch /Volumes/system-boot/ssh
   ```
 
 - Unmount and remove card
