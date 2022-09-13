@@ -1,5 +1,4 @@
 # SSH into Raspberry PI
-
 Makes the assumption that you have enabled ssh when [flushing the drive](./os_flushing.md).
 
  - Install nmap

@@ -1,0 +1,10 @@
+- hosts: master
+  remote_user: ubuntu
+  gather_facts: false
+
+  tasks:
+    - name: Ping
+      register: ps
+      script: ../scripts/ping.sh
+
+    - debug: var=ps.stdout_lines
